@@ -25,9 +25,9 @@ routes.delete('/:id', (req, res) => {
         if (!item[id]) {
             return item;
         }
-        db = newDb;
-        return res.send(newDb);
     });
+    db = newDb;
+    return res.send(newDb);
 
 });
 
