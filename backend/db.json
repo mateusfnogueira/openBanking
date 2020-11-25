@@ -1,0 +1,37 @@
+[
+    {
+        "1": {
+            "login": "mfnogueira",
+            "password": 123456,
+            "balance": 10000.00
+        }
+    },
+    {
+        "2": {
+            "login": "nogueira",
+            "password": 123456,
+            "balance": 10000.00
+        }
+    },
+    {
+        "3": {
+            "login": "fnogueira",
+            "password": 123456,
+            "balance": 10000.00
+        }
+    },
+    {
+        "4": {
+            "login": "mnogueira",
+            "password": 123456,
+            "balance": 10000.00
+        }
+    },
+    {
+        "5": {
+            "login": "mateus",
+            "password": 123456,
+            "balance": 10000.00
+        }
+    }
+]
