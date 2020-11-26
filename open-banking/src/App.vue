@@ -11,6 +11,7 @@
 
 <script>
 import Header from "@/components/Header";
+import "@/assets/css/style.css";
 
 export default {
   name: "App",
@@ -27,7 +28,7 @@ export default {
 
 <style lang="css" scoped>
 .v-main {
-  background-color: rgb(70, 64, 64);
+  background-color: var(--bg-page);
 }
 @keyframes slide-in {
   from {

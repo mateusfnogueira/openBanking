@@ -3,7 +3,6 @@
     <v-card
       class="card-login align-center d-flex flex-column ma-16 pa-4"
       width="30%"
-      color="rgb(238, 234, 234)"
       rounded="xl"
     >
       <v-card-title>Acesse sua conta</v-card-title>
@@ -21,6 +20,12 @@ export default {};
 <style lang="scss" scoped>
 .content-login {
   .card-login {
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 0.9500175070028011) 10%,
+      rgba(0, 212, 255, 1) 90%
+    );
     .v-text-field {
       width: 50%;
     }

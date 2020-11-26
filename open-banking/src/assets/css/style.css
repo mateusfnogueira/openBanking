@@ -1,0 +1,14 @@
+:root {
+    --bg-page: rgb(70, 64, 64);
+    --bg-header: rgba(2, 0, 36, 1);
+    --bg-card-info: linear-gradient(0deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 0.9500175070028011) 43%,
+            rgba(0, 212, 255, 1) 72%);
+    --bg-footer: rgba(0, 212, 255, 1);
+}
+
+* {
+    font-family: "Caveat", serif;
+    font-weight: 100;
+}

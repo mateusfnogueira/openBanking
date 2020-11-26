@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <v-app-bar app color="primary" dark>
+  <div class="header">
+    <v-app-bar app>
       <div class="d-flex align-center">
         <v-img
           alt="Bank Logo"
@@ -16,7 +16,7 @@
 
       <v-menu bottom offset-y transition="scale-transition">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn fab small color="primary" v-bind="attrs" v-on="on">
+          <v-btn fab small color="withe" v-bind="attrs" v-on="on">
             <v-icon size="40">mdi-account-circle</v-icon>
           </v-btn>
         </template>
@@ -38,14 +38,14 @@
             </v-btn>
           </v-list-item>
           <v-list-item>
-            <v-btn text to="/">
+            <v-btn text to="/login">
               Sair
             </v-btn>
           </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -54,4 +54,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+div .header {
+  .v-app-bar {
+    background: rgba(2, 0, 36, 1) !important;
+  }
+}
+</style>
