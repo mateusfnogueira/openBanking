@@ -16,18 +16,18 @@
           <h1>My Current Account</h1>
           <p>
             {{ user.name }}
-            {{ user.ag }} - {{ user.accountN }}
+            {{ ("0000" + user.ag).slice(-4) }} - {{ user.accountN }}
           </p>
         </v-col>
       </v-col>
       <v-col cols="12" md="3">
-        <h1 class="mt-3">R$ {{ user.balance }}</h1>
+        <h1 class="mt-3">R$ {{ user.balance.toFixed(2) }}</h1>
         <p>
           Total Balance
         </p>
       </v-col>
       <v-col cols="12" md="3">
-        <h1 class="mt-3">R$ {{ user.balanceValid }}</h1>
+        <h1 class="mt-3">R$ {{ user.balanceValid.toFixed(2) }}</h1>
         <p>
           Available balance
         </p>
@@ -63,7 +63,7 @@ export default {
       lastName: "Nogueira",
       login: "mfnogueira",
       birthday: "02/06/1992",
-      ag: "0001",
+      ag: 1,
       accountN: 51173020,
       balance: 10300.5,
       balanceValid: 8000.5,
