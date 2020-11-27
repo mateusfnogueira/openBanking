@@ -1,8 +1,7 @@
 const bcrypt = require('bcrypt-nodejs');
-const { db } = require('../config/db');
 
 module.exports = app => {
-    const { existsOrError, notExistsOrError, equalsOrError } = app.api.validation;
+    const { existsOrError, notExistsOrError } = app.api.validate;
 
     const encryptPassword = password => {
         const salt = bcrypt.genSaltSync(10);
@@ -17,7 +16,7 @@ module.exports = app => {
             existsOrError(user.name, 'nome não informado');
             existsOrError(user.email, 'Email não informado');
             existsOrError(user.login, 'Username não informado');
-            existsOrError(user.initDeposit, 'Informe seu depósito inicial');
+            existsOrError(user.balance, 'Informe seu depósito inicial');
             existsOrError(user.password, 'Senha não informada');
 
             const userFromDb = await app.db('users')
@@ -47,14 +46,14 @@ module.exports = app => {
 
     const get = (req, res) => {
         app.db('users')
-            .select('id', 'name', 'lastname', 'email', 'login', 'initDeposit')
+            .select('id', 'name', 'lastname', 'email', 'login', 'balance')
             .then(users => res.json(users))
             .catch(err => res.status(500).send(err));
     };
 
     const getById = (req, res) => {
         app.db('users')
-            .select('id', 'name', 'lastname', 'email', 'login', 'initDeposit')
+            .select('id', 'name', 'lastname', 'email', 'login', 'balance')
             .where({ id: req.params.id })
             .whereNull('deletedAt')
             .first()

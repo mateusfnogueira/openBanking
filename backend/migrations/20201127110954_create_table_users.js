@@ -7,7 +7,7 @@ exports.up = function (knex, Promise) {
         table.string('lastname').notNull();
         table.string('email').notNull().unique();
         table.string('login').notNull().unique();
-        table.string('initDeposit').noNull();
+        table.number('balance').noNull();
         table.string('password').notNull();
     });
 };

@@ -1,5 +1,5 @@
 const config = require('../knexfile');
-const knex = require('knex')(config);
+const knex = require('knex')({ client: 'postgresql' }, config);
 
 
 knex.migrate.latest([config]);
