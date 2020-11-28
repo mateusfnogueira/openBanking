@@ -59,7 +59,7 @@ export default {
   name: "Home",
   data: () => ({
     user: {
-      name: "Mateus",
+      // name: "Mateus",
       lastName: "Nogueira",
       login: "mfnogueira",
       birthday: "02/06/1992",
@@ -71,6 +71,11 @@ export default {
     },
   }),
   components: {},
+  computhed: {
+    name() {
+      return this.$store.state.user.name.replace(/ .*/, "");
+    },
+  },
 };
 </script>
 

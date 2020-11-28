@@ -1,4 +1,3 @@
-import user from '../../../s/src/models/users';
 <template>
   <div class="content-user justify-center d-flex ma-16">
     <v-card
@@ -13,18 +12,34 @@ import user from '../../../s/src/models/users';
       <v-text-field
         :value="user.name"
         label="Name"
+        readonly
         outlined
         dense
       ></v-text-field>
       <v-text-field
         :value="user.lastName"
         label="Lastname"
+        readonly
+        outlined
+        dense
+      ></v-text-field>
+      <v-text-field
+        :value="user.email"
+        label="E-mail"
+        readonly
         outlined
         dense
       ></v-text-field>
       <v-text-field
         :value="user.login"
         label="Login"
+        outlined
+        dense
+      ></v-text-field>
+      <v-text-field
+        :value="user.password"
+        label="Password"
+        type="password"
         outlined
         dense
       ></v-text-field>
@@ -46,6 +61,8 @@ export default {
       name: "Mateus",
       lastName: "Nogueira",
       login: "mfnogueira",
+      email: "mateusfnogueira@outlook.com",
+      password: "123456",
       birthday: "02/06/1992",
     },
   }),

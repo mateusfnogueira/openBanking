@@ -6,15 +6,50 @@
       rounded="xl"
     >
       <v-card-title>Acesse sua conta</v-card-title>
-      <v-text-field label="Login" outlined dense></v-text-field>
-      <v-text-field label="Password" outlined dense></v-text-field>
-      <v-btn color="">Submit</v-btn>
+      <v-text-field
+        v-model="user.login"
+        label="Login"
+        outlined
+        dense
+      ></v-text-field>
+      <v-text-field
+        v-model="user.password"
+        label="Password"
+        type="password"
+        outlined
+        dense
+      ></v-text-field>
+      <v-btn @click="signin" color="">Submit</v-btn>
     </v-card>
   </div>
 </template>
 
 <script>
-export default {};
+// import { baseApiUrl, showError, userKey } from "@/global";
+// import axios from "axios";
+
+export default {
+  data: () => ({
+    show: false,
+    user: {
+      login: "",
+      password: "",
+    },
+  }),
+  methods: {
+    signin() {
+      this.$store.dispatch("getUser");
+      // axios
+      //   .post(`${baseApiUrl}/signin`, this.user)
+      //   .then((res) => {
+      //     this.$store.commit("setUser", res.data);
+      //     localStorage.setItem(userKey, JSON.stringify(res.data));
+      //     this.$router.push({ path: "/" });
+      //   })
+      //   .catch(showError);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
