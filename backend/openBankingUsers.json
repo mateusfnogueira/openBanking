@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "mfn",
+      "ag": 1,
+      "accountN": 55521,
+      "name": "Mateus",
+      "lastname": "Nogueira",
+      "birthday": "02/06/1992",
+      "email": "mateusfnogueira@outlook.com",
+      "login": "mfn",
+      "password": "1233456",
+      "balance": 10000
+    },
+    {
+      "id": "fn",
+      "ag": 1,
+      "accountN": 55522,
+      "name": "fred",
+      "lastname": "Nogueira",
+      "birthday": "02/06/1992",
+      "email": "mateusf@outlook.com",
+      "login": "fn",
+      "password": "1233456",
+      "balance": 10000
+    }
+  ]
+}

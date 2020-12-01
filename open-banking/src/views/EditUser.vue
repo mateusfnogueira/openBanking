@@ -1,5 +1,5 @@
 <template>
-  <div class="content-user justify-center d-flex ma-16">
+  <div id="content-userEdit" class="justify-center d-flex ma-16">
     <v-card
       class="card-user d-flex flex-column align-center pb-5"
       width="60%"
@@ -10,34 +10,34 @@
       </v-card-title>
 
       <v-text-field
-        :value="user.name"
+        :value="$store.state.user.name"
         label="Name"
         readonly
         outlined
         dense
       ></v-text-field>
       <v-text-field
-        :value="user.lastName"
+        :value="$store.state.user.lastname"
         label="Lastname"
         readonly
         outlined
         dense
       ></v-text-field>
       <v-text-field
-        :value="user.email"
+        :value="$store.state.user.email"
         label="E-mail"
         readonly
         outlined
         dense
       ></v-text-field>
       <v-text-field
-        :value="user.login"
+        :value="$store.state.user.login"
         label="Login"
         outlined
         dense
       ></v-text-field>
       <v-text-field
-        :value="user.password"
+        :value="$store.state.user.password"
         label="Password"
         type="password"
         outlined
@@ -45,7 +45,7 @@
       ></v-text-field>
 
       <v-text-field
-        v-model="user.birthday"
+        v-model="$store.state.user.birthday"
         label="Birthday"
         prepend-icon="mdi-calendar"
         readonly
@@ -56,21 +56,12 @@
 
 <script>
 export default {
-  data: () => ({
-    user: {
-      name: "Mateus",
-      lastName: "Nogueira",
-      login: "mfnogueira",
-      email: "mateusfnogueira@outlook.com",
-      password: "123456",
-      birthday: "02/06/1992",
-    },
-  }),
+  data: () => ({}),
 };
 </script>
 
 <style lang="scss">
-.content-user {
+#content-userEdit {
   .card-user {
     background: linear-gradient(
       0deg,

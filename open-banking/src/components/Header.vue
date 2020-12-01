@@ -8,7 +8,7 @@
       fixed
       app
     >
-      <v-list>
+      <v-list v-if="$store.state.auth">
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -16,11 +16,17 @@
           router
           exact
         >
-          <v-list-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-action>
+          <v-icon class="mr-3">{{ item.icon }}</v-icon>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+      <v-list v-else>
+        <v-list-item to="/register">
+          <v-icon class="mr-3">mdi-account-plus</v-icon>
+          <v-list-item-content>
+            <v-list-item-title>Register</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -30,7 +36,11 @@
       <v-btn color="white" icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
+
+      <v-btn x-large text color="white" to="/" class="">{{ title }}</v-btn>
+      <v-toolbar-title v-if="$store.state.auth">
+        - Olá, {{ Username }}</v-toolbar-title
+      >
       <v-spacer />
     </v-app-bar>
   </div>
@@ -38,11 +48,10 @@
 
 <script>
 export default {
-  transition(to, from) {
-    if (!from) {
-      return "slide-left";
-    }
-    return +to.query.page < +from.query.page ? "slide-right" : "slide-left";
+  computed: {
+    Username() {
+      return this.$store.state.user.name.replace(/ .*/, "");
+    },
   },
   data() {
     return {
@@ -52,7 +61,7 @@ export default {
         {
           icon: "mdi-apps",
           title: "DashBoard",
-          to: "/",
+          to: "/dashboard",
         },
         {
           icon: "mdi-bank-transfer",
@@ -67,7 +76,7 @@ export default {
         {
           icon: "mdi-logout",
           title: "Logout",
-          to: "/Login",
+          to: "/",
         },
       ],
       miniVariant: true,
